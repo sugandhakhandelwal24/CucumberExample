@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		
 		monochrome = true,
 		//plugin = {"pretty"}, // see the output in the console in pretty format
-		plugin = {"pretty","html:target/cucumber-html"},
+		plugin = {"pretty","html:target/cucumber-html", "json:target/cucumber.json"},
 		features = "src/test/java/features",
 	//	tags = {"@NegativeLogin,@PositiveLogin"},
 		//tags = {"@NegativeLogin","@Sanity"},
