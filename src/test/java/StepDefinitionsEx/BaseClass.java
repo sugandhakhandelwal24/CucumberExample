@@ -17,6 +17,7 @@ public class BaseClass {
 		 driver.get("https://www.simplilearn.com/");
 	}
 	
+//	@After("@NegativeLogin") // only for negative login this test will be executed
 	@After
 	public void teardown()
 	{

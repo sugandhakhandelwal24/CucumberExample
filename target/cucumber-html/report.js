@@ -1,87 +1,24 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/features/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/java/features/FBSignUp.feature");
 formatter.feature({
-  "name": "Login feature",
-  "description": "Description: This feature will be used to login the Simplilearn Application",
+  "name": "Sign Up feature",
+  "description": "Description: This feature will be used to create a new account in facebook",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@LoginFeature"
-    }
-  ]
-});
-formatter.scenarioOutline({
-  "name": "Verify that when user enters correct username and password they should be able to login successfully",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@PositiveLogin"
-    },
-    {
-      "name": "@Sanity"
-    }
-  ]
-});
-formatter.step({
-  "name": "User is on the Simplilearn application",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "User click on the login link",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "User enters correct username \"\u003cUserName\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User enters correct password \"\u003cPassword\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User clicks on the login button",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User should be landed to the homepage",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "User should see the welcome message",
-  "keyword": "And "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "UserName",
-        "Password"
-      ]
-    },
-    {
-      "cells": [
-        "sk24@yopmail.com",
-        "Password@123"
-      ]
+      "name": "@SignUpFeature"
     }
   ]
 });
 formatter.scenario({
-  "name": "Verify that when user enters correct username and password they should be able to login successfully",
+  "name": "Verify that user is able to create the new account using cucumber datatable",
   "description": "",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "name": "@LoginFeature"
+      "name": "@SignUpFeature"
     },
     {
-      "name": "@PositiveLogin"
-    },
-    {
-      "name": "@Sanity"
+      "name": "@DataTable"
     }
   ]
 });
@@ -89,223 +26,83 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User is on the Simplilearn application",
+  "name": "User has launched the FB application",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginStepsdef.user_is_on_the_simplilearn_application()"
+  "location": "FBSignUpSteps.user_has_launched_the_fb_application()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User click on the login link",
+  "name": "User clicks on the Create New Account Link",
   "keyword": "When "
 });
 formatter.match({
-  "location": "LoginStepsdef.user_click_on_the_login_link()"
+  "location": "FBSignUpSteps.user_clicks_on_the_create_new_account_link()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters correct username \"sk24@yopmail.com\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_enters_correct_username_something(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User enters correct password \"Password@123\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_enters_correct_password_something(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User clicks on the login button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_clicks_on_the_login_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should be landed to the homepage",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_should_be_landed_to_the_homepage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should see the welcome message",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_should_see_the_welcome_message()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "name": "Verify that when user enters correct username and password they should be able to login successfully",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@NegativeLogin"
-    },
-    {
-      "name": "@Sanity"
-    }
-  ]
-});
-formatter.step({
-  "name": "User is on the Simplilearn application",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "User click on the login link",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "User enters correct username \"\u003cUserName\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User enters correct password \"\u003cPassword\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User clicks on the login button",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User should be landed to the homepage",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "User should see the welcome message",
-  "keyword": "And "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
+  "name": "User creates the new account",
   "rows": [
     {
       "cells": [
-        "UserName",
-        "Password"
+        "Field",
+        "Value"
       ]
     },
     {
       "cells": [
-        "suggu24@yopmail.com",
-        "Password@123"
+        "FirstNaame",
+        "Raj"
+      ]
+    },
+    {
+      "cells": [
+        "LastName",
+        "Sharma"
+      ]
+    },
+    {
+      "cells": [
+        "MobileNum",
+        "9999999999"
+      ]
+    },
+    {
+      "cells": [
+        "Password",
+        "abc@abc123"
       ]
     }
-  ]
-});
-formatter.scenario({
-  "name": "Verify that when user enters correct username and password they should be able to login successfully",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@LoginFeature"
-    },
-    {
-      "name": "@NegativeLogin"
-    },
-    {
-      "name": "@Sanity"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User is on the Simplilearn application",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_is_on_the_simplilearn_application()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click on the login link",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_click_on_the_login_link()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User enters correct username \"suggu24@yopmail.com\"",
+  ],
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginStepsdef.user_enters_correct_username_something(String)"
+  "location": "FBSignUpSteps.user_creates_the_new_account(DataTable)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters correct password \"Password@123\"",
+  "name": "User click on the SignUp button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginStepsdef.user_enters_correct_password_something(String)"
+  "location": "FBSignUpSteps.user_click_on_the_signup_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on the login button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_clicks_on_the_login_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should be landed to the homepage",
+  "name": "user should be able to see the success message",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepsdef.user_should_be_landed_to_the_homepage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should see the welcome message",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepsdef.user_should_see_the_welcome_message()"
+  "location": "FBSignUpSteps.user_should_be_able_to_see_the_success_message()"
 });
 formatter.result({
   "status": "passed"

@@ -11,10 +11,10 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = true,
 		//plugin = {"pretty"}, // see the output in the console in pretty format
 		plugin = {"pretty","html:target/cucumber-html"},
-		features = "src/features",
+		features = "src/test/java/features",
 	//	tags = {"@NegativeLogin,@PositiveLogin"},
-		//tags = {"@NegatuveLogin","@Sanity"},
-		tags= {"@LoginFeature"},
+		//tags = {"@NegativeLogin","@Sanity"},
+		tags= {"@DataTable"},
 		glue = {"StepDefinitionsEx"} // only tags and glue needs to be specified with curly braces
 		)
 public class TestRunner {
